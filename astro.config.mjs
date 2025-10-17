@@ -8,9 +8,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
 	integrations: [react()],
 	output: "server",
-	adapter: netlify({
-	  cacheOnDemandPages: true, 
-	}),
+	adapter: netlify(),
 	vite: {
 		// @ts-expect-error - Tailwind CSS v4 Vite plugin types
 		plugins: [tailwindcss()],
