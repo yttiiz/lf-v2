@@ -1,0 +1,8 @@
+onlyBuiltDependencies:
+  - '@heroui/shared-utils'
+  - '@parcel/watcher'
+  - '@tailwindcss/oxide'
+  - esbuild
+  - netlify-cli
+  - sharp
+  - unix-dgram

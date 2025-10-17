@@ -1,15 +1,18 @@
 // @ts-check
+
+import netlify from "@astrojs/netlify";
 import react from "@astrojs/react";
-import deno from "@deno/astro-adapter";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
 	integrations: [react()],
 	output: "server",
-	adapter: deno(),
+	adapter: netlify({
+	  cacheOnDemandPages: true, 
+	}),
 	vite: {
 		// @ts-expect-error - Tailwind CSS v4 Vite plugin types
-		plugins: [tailwindcss()]
+		plugins: [tailwindcss()],
 	},
 });

@@ -12,8 +12,8 @@
 		"prepare": "husky"
 	},
 	"dependencies": {
+		"@astrojs/netlify": "^6.5.13",
 		"@astrojs/react": "^4.3.0",
-		"@deno/astro-adapter": "^0.3.2",
 		"@heroui/react": "^2.8.4",
 		"@heroui/toast": "^2.0.16",
 		"@nanostores/react": "^1.0.0",
@@ -38,6 +38,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.2.4",
 		"husky": "^9.1.7",
+		"netlify-cli": "^23.9.1",
 		"react-easy-crop": "^5.5.3",
 		"vite": "^7.1.7"
 	}
