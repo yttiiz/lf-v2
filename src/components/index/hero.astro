@@ -48,11 +48,7 @@ const {
 <style>
 	.hero-banner {
 		background-image: linear-gradient(to top, #fb923c, #029cde);
-		padding: 0 calc(var(--base-size) * 2);
-	}
-
-	.hero-banner > div {
-		max-width: calc(var(--base-size) * 80);
+		padding: 0;
 	}
 
 	h1 {
@@ -91,5 +87,15 @@ const {
 			transparent 50%,
 			rgb(255 255 255 / 0.25) 150%
 		);
+	}
+
+	@media screen and (min-width: 760px) {
+		.hero-banner {
+			padding: 0 calc(var(--base-size) * 2);
+		}
+
+		.hero-banner > div {
+			max-width: calc(var(--base-size) * 80);
+		}
 	}
 </style>
