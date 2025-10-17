@@ -9,8 +9,6 @@ declare namespace App {
 
 interface ImportMetaEnv {
 	readonly APP_ENV: string;
-	readonly PORT: number;
-	readonly HOST: string;
 	readonly PUBLIC_APP_URL: string;
 	readonly APP_SESSION_NAME: string;
 	readonly IMAGE_UPLOADER_API_KEY: string;
