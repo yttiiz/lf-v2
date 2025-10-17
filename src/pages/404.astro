@@ -1,0 +1,34 @@
+---
+import { Illustration } from "@components/shared/Error/Illustration";
+import H1 from "@components/shared/Heading/H1.astro";
+import Link from "@components/shared/Link/Link.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+	<section>
+		<div
+			class="container flex justify-center items-center h-[var(--dvh-header)]"
+		>
+			<div class="relative flex flex-col items-center gap-4">
+				<Illustration />
+				<H1 children="Page non trouvée" />
+				<p class="text-center">
+					Oups ! Vous vous êtes perdu. Veuillez cliquer sur le bouton ci-dessous
+					pour <strong>revenir à l'accueil</strong>.
+				</p>
+				<Link
+					value="retour à l'accueil"
+					type="button"
+					href="/"
+					variant="primary"
+				/>
+				<span
+					class="absolute opacity-7 text-9xl lg:text-[250px] top-[50%] translate-y-[-50%] font-extrabold text-primary -z-10"
+				>
+					404
+				</span>
+			</div>
+		</div>
+	</section>
+</Layout>

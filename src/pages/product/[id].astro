@@ -1,0 +1,15 @@
+---
+import Conditions from "@components/product/conditions.astro";
+import { ProductContainer } from "@components/product/ProductContainer";
+import Layout from "@layouts/Layout.astro";
+
+const { id } = Astro.params as { id: string };
+---
+
+<Layout>
+	<ProductContainer
+		id={id}
+		client:load
+	/>
+	<Conditions />
+</Layout>

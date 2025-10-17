@@ -1,0 +1,28 @@
+---
+import H1 from "@components/shared/Heading/H1.astro";
+import H2 from "@components/shared/Heading/H2.astro";
+import { paragraphs, title } from "@data/legals/legal.json";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+	<div class="container flex flex-col gap-4 !mb-16">
+		<H1 children={title} />
+    <div>
+      {
+        paragraphs.map(({ isHtml, subtitle, textContent }) => isHtml ? (
+          <H2 className="mt-6 mb-2 text-xl" children={subtitle as string} />
+          <p set:html={textContent} />
+        ) : (
+          <p><strong>{subtitle}</strong> {textContent}</p>
+        ))
+      }
+    </div>
+	</div>
+</Layout>
+
+<style>
+  p {
+    font-size: var(--base-size);
+  }
+</style>

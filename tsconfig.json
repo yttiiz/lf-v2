@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "react",
+		"baseUrl": ".",
+		"allowJs": true,
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@assets/*": ["src/assets/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@data/*": ["src/data/*"],
+			"@utils": ["src/utils/mod.ts"],
+			"@sdk": ["src/sdk/fetcher.ts"],
+			"@db": ["src/db/mod.ts"],
+			"@better-auth": ["src/lib/mod.ts"],
+			"@better-auth-server": ["src/lib/auth.ts"],
+			"@store": ["src/store/mod.ts"],
+			"@services": ["src/services/mod.ts"],
+			"@types": ["src/types/mod.ts"]
+		}
+	},
+	"extends": "astro/tsconfigs/strict",
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["dist"]
+}

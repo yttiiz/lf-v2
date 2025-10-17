@@ -1,0 +1,29 @@
+---
+import H2 from "@components/shared/Heading/H2.astro";
+import { Icon } from "@components/shared/Icons/Icon";
+import { items, title } from "@data/product/condition.json";
+---
+
+<section>
+	<div class="container">
+		<div id="conditions">
+			<H2 children={title} />
+			{
+				items.map((item) => (
+					<p class="grid grid-cols-[auto_auto] gap-2 mb-6">
+						<Icon icon={item.icon} />
+						<span set:html={item.content} />
+					</p>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	#conditions {
+		& span {
+			font-size: var(--base-size);
+		}
+	}
+</style>

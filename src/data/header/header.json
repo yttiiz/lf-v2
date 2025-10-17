@@ -1,0 +1,43 @@
+{
+	"menu": [
+		{
+			"textContent": "Mes réservations",
+			"href": "/booking",
+			"icon": "booking",
+			"isRelatedToUser": true,
+			"isLink": true
+		},
+		{
+			"textContent": "Les appartements",
+			"icon": "house",
+			"isRelatedToUser": false,
+			"isLink": false
+		},
+		{
+			"textContent": "Les endroits à visiter",
+			"href": "/#visits",
+			"icon": "star",
+			"isRelatedToUser": false,
+			"isLink": true
+		},
+		{
+			"textContent": "Contactez-nous",
+			"href": "/contact",
+			"icon": "mail",
+			"isRelatedToUser": false,
+			"isLink": true
+		}
+	],
+	"login": [
+		{
+			"textContent": "se connecter",
+			"href": "/login",
+			"isButton": false
+		},
+		{
+			"textContent": "s'inscrire",
+			"href": "/register",
+			"isButton": true
+		}
+	]
+}

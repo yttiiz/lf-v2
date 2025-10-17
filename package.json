@@ -1,0 +1,44 @@
+{
+	"name": "flamboyants",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"check": "biome check --max-diagnostics=none src",
+		"format": "biome check --write src",
+		"preview": "deno -A ./dist/server/entry.mjs",
+		"astro": "astro",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"@astrojs/react": "^4.3.0",
+		"@deno/astro-adapter": "^0.3.2",
+		"@heroui/react": "^2.8.4",
+		"@heroui/toast": "^2.0.16",
+		"@nanostores/react": "^1.0.0",
+		"@tailwindcss/vite": "^4.1.11",
+		"@tanstack/react-query": "^5.89.0",
+		"@types/react": "^19.1.9",
+		"@types/react-dom": "^19.1.7",
+		"@yttiiz/utils": "npm:@jsr/yttiiz__utils@^0.2.12",
+		"astro": "^5.13.7",
+		"better-auth": "^1.3.14",
+		"cheerio": "^1.1.2",
+		"framer-motion": "^12.23.15",
+		"mongodb": "^6.19.0",
+		"nanostores": "^1.0.1",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"react-hook-form": "^7.62.0",
+		"sharp": "^0.34.4",
+		"tailwind-merge": "^3.3.1",
+		"tailwindcss": "^4.1.11"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.4",
+		"husky": "^9.1.7",
+		"react-easy-crop": "^5.5.3",
+		"vite": "^7.1.7"
+	}
+}

@@ -1,0 +1,23 @@
+---
+import H1 from "@components/shared/Heading/H1.astro";
+import { UserProfil as Profil } from "@components/user-profil/UserProfil";
+import { title, warningTextContent } from "@data/user-profil/delete-user.json";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+	<section>
+		<div class="container flex justify-center min-h-[var(--dvh-header)]">
+			<div class="flex flex-col w-full items-center gap-8">
+				<H1
+					children="Votre compte"
+					className="text-center"
+				/>
+				<Profil
+					deleteUserContent={{ title, warningTextContent }}
+					client:load
+				/>
+			</div>
+		</div>
+	</section>
+</Layout>

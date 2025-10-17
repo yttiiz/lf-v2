@@ -1,0 +1,43 @@
+{
+	"details": {
+		"companyName": "Les Flamboyants",
+		"address": {
+			"line": "18 Bis Rue Georges Troupé",
+			"zip": "97180",
+			"city": "Sainte-Anne",
+			"country": "Guadeloupe"
+		},
+		"phone": "+590 690 00 7569"
+	},
+	"company": {
+		"title": "Entreprise",
+		"items": [
+			{
+				"href": "/",
+				"textContent": "Accueil",
+				"className": "footer-home"
+			},
+			{
+				"href": "/contact",
+				"textContent": "Contactez-nous",
+				"className": "footer-contact"
+			}
+		]
+	},
+	"legalsInformations": {
+		"title": "Informations légales",
+		"items": [
+			{
+				"href": "/legal",
+				"textContent": "Mentions légales",
+				"className": "footer-legal"
+			},
+			{
+				"href": "/privacy",
+				"textContent": "Politique de confidentialité",
+				"clasName": "footer-privacy"
+			}
+		]
+	},
+	"copyrights": "Tous droits réservés © Les Flamboyants"
+}

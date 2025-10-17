@@ -1,0 +1,90 @@
+---
+import ShapeLogo from "@components/shared/Logos/LesFlamboyantsShapeLogo.astro";
+import footerContent from "@data/footer/footer.json";
+import H2 from "../Heading/H2.astro";
+import H3 from "../Heading/H3.astro";
+import Link from "../Link/Link.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-primary">
+	<div class="container flex flex-col text-white gap-10">
+		<div class="flex flex-col gap-10 lg:flex-row lg:justify-between">
+			<div class="footer-details grid gap-2.5">
+				<ShapeLogo
+					variant="white"
+					className="w-16 h-auto"
+				/>
+				<H2
+					children={footerContent.details.companyName}
+					className="text-white"
+				/>
+				<div class="grid">
+					<span>{footerContent.details.address.line}</span>
+					<span
+						>{footerContent.details.address.zip}
+						{footerContent.details.address.city}</span
+					>
+					<span>{footerContent.details.address.country}</span>
+				</div>
+				<Link
+					type="button"
+					href={`tel:${footerContent.details.phone}`}
+					value={footerContent.details.phone}
+					variant="secondary"
+				/>
+			</div>
+			<div>
+				<H3
+					children={footerContent.company.title}
+					className="text-secondary mb-4"
+				/>
+				<ul>
+					{
+						footerContent.company.items.map((item) => (
+							<li>
+								<Link
+									type="link"
+									href={item.href}
+									value={item.textContent}
+									variant="white"
+								/>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+			<div>
+				<H3
+					children={footerContent.legalsInformations.title}
+					className="text-secondary mb-4"
+				/>
+				<ul>
+					{
+						footerContent.legalsInformations.items.map((item) => (
+							<li>
+								<Link
+									type="link"
+									href={item.href}
+									value={item.textContent}
+									variant="white"
+								/>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+		<div class="copyrights text-center text-xs">
+			<span>{footerContent.copyrights} {year}</span>
+		</div>
+	</div>
+</footer>
+
+<style>
+	ul {
+		display: grid;
+		gap: calc(var(--base-size) * 0.5);
+	}
+</style>

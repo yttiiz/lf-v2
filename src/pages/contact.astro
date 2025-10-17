@@ -1,0 +1,21 @@
+---
+import { ContactForm } from "@components/contact/ContactForm";
+import H1 from "@components/shared/Heading/H1.astro";
+import { description, title } from "@data/contact/contact.json";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+	<div
+		class="container flex justify-center items-center min-h-[var(--dvh-header)]"
+	>
+		<div class="flex flex-col items-center gap-8">
+			<H1
+				children={title}
+				className="text-center"
+			/>
+			<p>{description}</p>
+			<ContactForm client:load />
+		</div>
+	</div>
+</Layout>

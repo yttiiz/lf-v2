@@ -1,0 +1,24 @@
+---
+import LesFlamboyantsLogo from "@components/shared/Logos/LesFlamboyantsLogo.astro";
+import LesFlamboyantsShapeLogo from "@components/shared/Logos/LesFlamboyantsShapeLogo.astro";
+import { isHomePageUrl } from "@utils";
+
+const isHomePage = isHomePageUrl(Astro.request.url);
+---
+
+<div id="logo">
+	<a
+		href="/"
+		class="flex gap-2 items-center"
+		aria-label="les Flamboyants"
+	>
+		<LesFlamboyantsShapeLogo
+			variant={isHomePage ? "white" : "primary"}
+			className="h-6 w-auto sm:hidden"
+		/>
+		<LesFlamboyantsLogo
+			color={isHomePage ? "full-white" : "normal"}
+			className="h-6 w-auto hidden sm:block"
+		/>
+	</a>
+</div>

@@ -1,0 +1,21 @@
+---
+import H2 from "@components/shared/Heading/H2.astro";
+import type { VisitCardType } from "@types";
+import VisitsList from "./visitsList.astro";
+
+type Props = {
+	content: {
+		title: string;
+		items: VisitCardType[];
+	};
+};
+
+const { content } = Astro.props;
+---
+
+<div class="container flex flex-col gap-8">
+	<div>
+		<H2 children={content.title} />
+	</div>
+	<VisitsList items={content.items} />
+</div>

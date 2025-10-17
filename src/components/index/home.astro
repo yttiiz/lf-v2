@@ -1,0 +1,32 @@
+---
+import { getEntry } from "astro:content";
+import type { HomeContentType } from "@types";
+import Hero from "./hero.astro";
+import Products from "./products.astro";
+import Visits from "./visits.astro";
+
+let content = {} as HomeContentType;
+let retrieveContent = await getEntry("home", "content");
+
+if (retrieveContent) {
+	content = { ...retrieveContent.data };
+}
+---
+
+<div id="data-home">
+	<section>
+		<Hero content={content.hero} />
+	</section>
+	<section
+		id="products"
+		class="pt-[var(--header-site-height)]"
+	>
+		<Products content={content.apartments} />
+	</section>
+	<section
+		id="visits"
+		class="pt-[var(--header-site-height)]"
+	>
+		<Visits content={content.visits} />
+	</section>
+</div>

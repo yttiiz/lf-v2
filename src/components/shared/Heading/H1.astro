@@ -1,0 +1,14 @@
+---
+import { cn } from "@heroui/react";
+
+type Props = {
+	children: string;
+	className?: string;
+};
+
+const { className, children } = Astro.props;
+---
+
+<h1 class={cn("text-4xl/10 font-medium text-primary", className)}>
+	{children}
+</h1>

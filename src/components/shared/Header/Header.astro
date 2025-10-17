@@ -1,0 +1,52 @@
+---
+import headerData from "@data/header/header.json";
+import type { ItemType } from "@types";
+import { isHomePageUrl } from "@utils";
+import { Burger } from "./Burger/Burger";
+import Logo from "./Logo/Logo.astro";
+import { UserSession } from "./UserSession/UserSession";
+
+const { menu, login: items } = headerData;
+const { user } = Astro.locals;
+
+const isHomePage = isHomePageUrl(Astro.request.url);
+---
+
+<header
+	data-header="site"
+	class={`sticky top-0 shadow-[var(--box-shadow)] z-10 border-b ${isHomePage ? "border-white/20" : "border-primary/20 bg-white/70"}`}
+>
+	<div class="header-container flex items-center justify-between h-full">
+		<div class="flex items-center gap-2 lg:gap-4">
+			<Burger
+				isHomePage={isHomePage}
+				menuItems={menu as ItemType[]}
+				client:load
+			/>
+			<Logo />
+		</div>
+
+		<div>
+			<UserSession
+				user={user}
+				isHomePage={isHomePage}
+				items={items}
+				client:load
+			/>
+		</div>
+	</div>
+</header>
+
+<style>
+	header {
+		backdrop-filter: blur(var(--base-size));
+		-webkit-backdrop-filter: blur(var(--base-size));
+	}
+</style>
+
+<script>
+	import { isHomePageUrl, handleHeader } from "@utils";
+	const isHomePage = isHomePageUrl(globalThis.location.href);
+
+	isHomePage && handleHeader();
+</script>

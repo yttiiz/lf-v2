@@ -1,0 +1,141 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": true,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 80,
+		"lineEnding": "lf",
+		"includes": ["**"]
+	},
+	"javascript": {
+		"formatter": {
+			"bracketSpacing": true,
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"semicolons": "always",
+			"trailingCommas": "all",
+			"attributePosition": "multiline"
+		},
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"correctness": {
+				"noUnusedImports": {
+					"options": {},
+					"level": "error",
+					"fix": "safe"
+				},
+				"noUnusedVariables": {
+					"options": {
+						"ignoreRestSiblings": true
+					},
+					"level": "error",
+					"fix": "safe"
+				},
+				"useExhaustiveDependencies": {
+					"options": {},
+					"level": "error",
+					"fix": "safe"
+				},
+				"useUniqueElementIds": "off",
+				"noChildrenProp": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off",
+				"noConsole": {
+					"level": "error",
+					"options": { "allow": ["assert", "error", "info", "warn", "debug"] }
+				},
+				"noArrayIndexKey": "on",
+				"noControlCharactersInRegex": "off",
+				"noUnknownAtRules": "off",
+				"noDoubleEquals": {
+					"options": {},
+					"level": "error",
+					"fix": "safe"
+				}
+			},
+			"a11y": {
+				"noSvgWithoutTitle": "off",
+				"noStaticElementInteractions": "off",
+				"useKeyWithClickEvents": "off"
+			},
+			"nursery": {
+				"useSortedClasses": {
+					"level": "warn",
+					"fix": "safe",
+					"options": {}
+				}
+			},
+			"style": {
+				"noParameterAssign": "off",
+				"useImportType": "error",
+				"useAsConstAssertion": "error",
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error",
+				"noUnusedTemplateLiteral": "error",
+				"useNumberNamespace": "error",
+				"noInferrableTypes": "error",
+				"noNonNullAssertion": "error",
+				"useTemplate": {
+					"options": {},
+					"level": "error",
+					"fix": "safe"
+				},
+				"noUselessElse": "off"
+			},
+			"complexity": {
+				"noStaticOnlyClass": "off",
+				"noImportantStyles": "off",
+				"useLiteralKeys": "off",
+				"useOptionalChain": "off",
+				"noUselessFragments": {
+					"options": {},
+					"level": "info",
+					"fix": "safe"
+				}
+			},
+			"security": {
+				"noDangerouslySetInnerHtml": "off"
+			},
+			"performance": {
+				"noDelete": "off"
+			}
+		}
+	},
+	"files": {
+		"includes": ["**", "!**/env.d.ts", "!**/.husky"]
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.svelte", "**/*.astro", "**/*.vue", "**/*.css"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useConst": "off",
+						"useImportType": "off"
+					},
+					"correctness": {
+						"noUnusedVariables": "off",
+						"noUnusedImports": "off"
+					}
+				}
+			}
+		}
+	]
+}
