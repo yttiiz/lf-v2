@@ -26,3 +26,5 @@ pnpm-debug.log*
 
 # deno lock
 deno.lock
+# Local Netlify folder
+.netlify
