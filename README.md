@@ -1,5 +1,7 @@
 # ![favicon](./public/favicon.png) Les flamboyants
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bb716c19-6c83-49a4-8f9e-df4032f420e8/deploy-status)](https://app.netlify.com/projects/lf-v2/deploys)
+
 A modern web application for booking services built with Astro, React, and MongoDB.
 
 ## 🚀 Tech Stack
