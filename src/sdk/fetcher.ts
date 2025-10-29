@@ -183,19 +183,17 @@ export const postSendRegisterEmail = async (
 	return { ok: false, message: res.message };
 };
 
-export const postUploadImage = async (
-	formData: FormData,
-): Promise<{ ok: boolean; message: string }> => {
-	const res = await fetch(getUrl("api/image-uploader"), {
-		method: "POST",
-		body: formData,
-	});
+export const postUploadImage = async (formData: FormData) => {
+	const res = await Fetcher.postData<{ ok: boolean; message: string }>(
+		getUrl("api/image-uploader"),
+		formData,
+	);
 
 	if (res.ok) {
-		return await res.json();
+		return res.data;
 	}
 
-	return { ok: false, message: res.statusText };
+	return { ok: false, message: res.message };
 };
 
 export const deleteBooking = async ({
