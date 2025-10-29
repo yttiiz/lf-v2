@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Merriweather:wght@400;700&family=Roboto:wght@300;500;700&display=swap");
 @import "tailwindcss";
-@plugin './hero.ts';
-@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@plugin "./hero.ts";
+@source "../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
 
 @theme {
 	/*=====| Colors |===== */
