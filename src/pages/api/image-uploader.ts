@@ -14,5 +14,6 @@ export const POST: APIRoute = async ({ request }) => {
 		return new Response(JSON.stringify({ ok: true, message: data.avatarUrl }));
 	}
 
-	return new Response(JSON.stringify({ ok: false, message: res.message }));
+	const { message } = JSON.parse(res.message);
+	return new Response(JSON.stringify({ ok: false, message }));
 };
