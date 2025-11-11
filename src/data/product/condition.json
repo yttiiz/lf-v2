@@ -3,7 +3,7 @@
 	"items": [
 		{
 			"icon": "euro",
-			"content": "<b>Paiement</b> : Le paiement doit être effectué en totalité avant l'arrivée. Nous acceptons les paiements par carte de crédit, virement bancaire, chèques et espèces. La caution est de 250€. Elle pourra être payée par carte ou par chèque à votre arrivée sur place."
+			"content": "<b>Paiement</b> : Le paiement peut être effectué à l'arrivée. Nous acceptons les paiements par virement bancaire, chèques et espèces. La caution est de 250€. Elle pourra être payée par carte ou par chèque à votre arrivée sur place."
 		},
 		{
 			"icon": "booking",
