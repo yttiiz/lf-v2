@@ -26,6 +26,7 @@ interface ImportMetaEnv {
 	readonly DOMAIN_AUTHORIZED: string;
 	readonly BETTER_AUTH_SECRET: string;
 	readonly BETTER_AUTH_URL: string;
+	readonly PUBLIC_MIN_PASSWORD_LENGTH: string;
 }
 
 interface ImportMeta {

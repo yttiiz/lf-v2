@@ -13,6 +13,7 @@ export const auth = betterAuth({
 	database,
 	emailAndPassword: {
 		enabled: true,
+		minPasswordLength: +import.meta.env.PUBLIC_MIN_PASSWORD_LENGTH,
 		sendResetPassword: async ({ user, token }) => {
 			const firstname = user.name.split(" ")[0];
 

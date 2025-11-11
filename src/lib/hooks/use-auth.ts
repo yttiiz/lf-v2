@@ -85,7 +85,8 @@ export const useAuth = () => {
 		return null;
 	};
 
-	const validatePassword = (password: string, size = 6): string | null => {
+	const validatePassword = (password: string): string | null => {
+		const size = +import.meta.env.PUBLIC_MIN_PASSWORD_LENGTH;
 		if (!password) return "Veuillez renseigner ce champ.";
 		if (password.length < size) return "Votre mot de passe est trop court.";
 		return null;
