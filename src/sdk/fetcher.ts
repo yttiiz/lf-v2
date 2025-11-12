@@ -5,7 +5,6 @@ import type {
 	BookingsType,
 	ContactMessageType,
 	ItemType,
-	ProductCardContentType,
 	ProductSchemaWithIDType,
 	ReviewsProductSchemaWithIDType,
 	UserBookingsType,
@@ -38,41 +37,6 @@ export const getMenuData = (menuItems: ItemType[] | undefined) => {
 	);
 
 	return menuItems;
-};
-
-export const getProducts = async () => {
-	type ProductRefinedReviewType = (ProductSchemaWithIDType & {
-		review: ReviewsProductSchemaWithIDType;
-	})[];
-
-	const products: ProductCardContentType[] = [];
-	const res = await Fetcher.getData<ProductRefinedReviewType>(
-		getUrl("/api/products?withReview"),
-	);
-
-	if (res.ok) {
-		for (const {
-			details,
-			description,
-			name,
-			thumbnail,
-			pictures,
-			_id,
-			review,
-		} of res.data) {
-			products.push({
-				details,
-				description,
-				href: `/product/${_id.toString()}`,
-				name: `Aka ${name}`,
-				thumbnail,
-				pictures,
-				review,
-			});
-		}
-	}
-
-	return products;
 };
 
 export const getProduct = async (id: string) => {
