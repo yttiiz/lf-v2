@@ -1,13 +1,16 @@
 import { IconCopyClipboard } from "@components/shared/Icons/mod";
 import { Modal } from "@components/shared/Modal/Modal";
-import { cn, Spinner, Tooltip, useDisclosure } from "@heroui/react";
+import { cn, Tooltip, useDisclosure } from "@heroui/react";
+import type { ProductCardContentType } from "@types";
 import { getUrl } from "@utils";
 import { useState } from "react";
-import { useGetProducts } from "./hook";
 import { ProductCard } from "./ProductCard";
 
-export const ProductsList = () => {
-	const { isPending, data: products } = useGetProducts();
+type Props = {
+	products: ProductCardContentType[];
+};
+
+export const ProductsList = ({ products }: Props) => {
 	const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
 	const [productUrl, setProductUrl] = useState("");
 	const [productName, setProductName] = useState("");
@@ -22,21 +25,20 @@ export const ProductsList = () => {
 		}, 1500);
 	};
 
-	if (isPending)
+	if (!products || products.length === 0) {
 		return (
 			<div className="flex justify-center">
-				<Spinner
-					size="lg"
-					color="primary"
-					label="Chargement..."
-				/>
+				<p className="text-grey-dark">
+					Aucun produit disponible pour le moment.
+				</p>
 			</div>
 		);
+	}
 
 	return (
 		<>
 			<ul className="grid grid-cols-1 gap-8 md:grid-cols-2">
-				{products?.map((product, index) => (
+				{products.map((product, index) => (
 					<li
 						key={`${product.name}-${index + 1}`}
 						className="overflow-hidden rounded-2xl border border-dark/25 transition-transform duration-300 will-change-transform hover:scale-105 hover:shadow"

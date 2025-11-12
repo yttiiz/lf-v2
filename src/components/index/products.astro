@@ -1,13 +1,14 @@
 ---
 import H2 from "@components/shared/Heading/H2.astro";
-import type { ApartmentsContentType } from "@types";
+import type { ApartmentsContentType, ProductCardContentType } from "@types";
 import { ProductsList } from "./ProductsList";
 
 type Props = {
 	content: ApartmentsContentType;
+	products: ProductCardContentType[];
 };
 
-const { content } = Astro.props;
+const { content, products } = Astro.props;
 ---
 
 <div class="container flex flex-col gap-8">
@@ -15,5 +16,5 @@ const { content } = Astro.props;
 		<H2 children={content.title} />
 		<p>{content.paragraph}</p>
 	</div>
-	<ProductsList client:load />
+	<ProductsList products={products} client:load />
 </div>

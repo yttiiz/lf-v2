@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
-import type { HomeContentType } from "@types";
+import { getProductsService } from "@services";
+import type { HomeContentType, ProductCardContentType } from "@types";
 import Hero from "./hero.astro";
 import Products from "./products.astro";
 import Visits from "./visits.astro";
@@ -10,6 +11,23 @@ let retrieveContent = await getEntry("home", "content");
 
 if (retrieveContent) {
 	content = { ...retrieveContent.data };
+}
+
+const productsData = await getProductsService("withReview");
+let products: ProductCardContentType[] = [];
+
+if (Array.isArray(productsData)) {
+	products = productsData.map(
+		({ details, description, name, thumbnail, pictures, _id, review }) => ({
+			details,
+			description,
+			href: `/product/${_id.toString()}`,
+			name: `Aka ${name}`,
+			thumbnail,
+			pictures,
+			review,
+		}),
+	);
 }
 ---
 
@@ -21,7 +39,7 @@ if (retrieveContent) {
 		id="products"
 		class="pt-[var(--header-site-height)]"
 	>
-		<Products content={content.apartments} />
+		<Products content={content.apartments} products={products} />
 	</section>
 	<section
 		id="visits"
