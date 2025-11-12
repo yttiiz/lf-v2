@@ -35,6 +35,12 @@ const isHomePage = isHomePageUrl(Astro.request.url);
 			content={description ??
 				"Découvrez notre site de réservation d'appartements pour vos vacances, sur la ville de Sainte-Anne en Guadeloupe"}
 		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Merriweather:wght@400;700&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+		<noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Merriweather:wght@400;700&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+		</noscript>
 		<title>Les Flamboyants{title ? ` | ${title}` : ""}</title>
 	</head>
 	<body class="grid min-h-dvh font-primary">
