@@ -78,16 +78,16 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          run: |
-            echo "Calling Netlify API for site $NETLIFY_SITE_ID"
-            http_status=$(curl -s -o /tmp/netlify_resp.json -w "%{http_code}" \
-              -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
-              "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID" || true)
-            echo "HTTP status: $http_status"
-            echo "Body:"
-            sed -n '1,200p' /tmp/netlify_resp.json || true
-            if [ "$http_status" != "200" ]; then
-              echo "Netlify API returned non-200; check NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID"
-              exit 1
-            fi
+        run: |
+          echo "Calling Netlify API for site $NETLIFY_SITE_ID"
+          http_status=$(curl -s -o /tmp/netlify_resp.json -w "%{http_code}" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID" || true)
+          echo "HTTP status: $http_status"
+          echo "Body:"
+          sed -n '1,200p' /tmp/netlify_resp.json || true
+          if [ "$http_status" != "200" ]; then
+            echo "Netlify API returned non-200; check NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID"
+            exit 1
+          fi
         timeout-minutes: 10
