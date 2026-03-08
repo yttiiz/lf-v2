@@ -52,9 +52,9 @@ export const UserSession = ({
 				</div>
 			) : (
 				<div className="login flex items-center gap-4">
-					{items.map(({ href, textContent, isButton }, index) => (
+					{items.map(({ href, textContent, isButton }) => (
 						<Link
-							key={`${textContent}-${index + 1}`}
+							key={textContent}
 							href={href}
 							type={isButton ? "button" : "link"}
 							value={textContent}

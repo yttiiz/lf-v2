@@ -38,9 +38,9 @@ export const ProductsList = ({ products }: Props) => {
 	return (
 		<>
 			<ul className="grid grid-cols-1 gap-8 md:grid-cols-2">
-				{products.map((product, index) => (
+				{products.map((product) => (
 					<li
-						key={`${product.name}-${index + 1}`}
+						key={product.name}
 						className="overflow-hidden rounded-2xl border border-dark/25 transition-transform duration-300 will-change-transform hover:scale-105 hover:shadow"
 					>
 						<ProductCard

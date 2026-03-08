@@ -10,9 +10,9 @@ export const ProductReviewsListCard = ({
 }) => {
 	return (
 		<dl>
-			{reviews.map(({ userName, comment, timestamp, rate }, index) => (
+			{reviews.map(({ userName, comment, timestamp, rate }) => (
 				<div
-					key={`${userName}-${index + 1}`}
+					key={userName}
 					className="not-last:mb-6"
 				>
 					<dt>{userName}</dt>

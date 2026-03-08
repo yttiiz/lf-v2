@@ -35,7 +35,7 @@ export const RateInput = ({
 								name="rate"
 								required
 								value={index + 1}
-								className="-z-1 absolute left-2.5"
+								className="absolute left-2.5 -z-1"
 								onChange={onChange}
 							/>
 							<span>{rate}</span>

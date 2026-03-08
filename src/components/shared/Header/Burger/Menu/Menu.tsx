@@ -18,13 +18,17 @@ export const Menu = ({ items }: { items?: ItemType[] }) => {
 	return (
 		<ul>
 			{items?.map(
-				(
-					{ textContent, href, isLink, isRelatedToUser, icon, itemsSubmenu },
-					index,
-				) => {
+				({
+					textContent,
+					href,
+					isLink,
+					isRelatedToUser,
+					icon,
+					itemsSubmenu,
+				}) => {
 					return isRelatedToUser && !$isUserConnected ? null : (
 						<li
-							key={`${textContent}-${index + 1}`}
+							key={textContent}
 							className={itemContainerClassName}
 						>
 							{isLink ? (

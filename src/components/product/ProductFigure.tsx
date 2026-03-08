@@ -36,9 +36,9 @@ export const ProductFigure = ({
 				className="flex h-full transition duration-300"
 				style={{ width: sliderSize }}
 			>
-				{pictures.map(({ src, alt }, index) => (
+				{pictures.map(({ src, alt }) => (
 					<li
-						key={`${alt}-${index + 1}`}
+						key={alt}
 						className="w-full"
 					>
 						<img

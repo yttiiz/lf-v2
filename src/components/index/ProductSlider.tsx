@@ -30,9 +30,9 @@ export const ProductSlider = ({
 				className="flex transition-transform duration-300"
 				style={{ width: sliderSize }}
 			>
-				{pictures.map((picture, index) => (
+				{pictures.map((picture) => (
 					<li
-						key={`${picture.alt}-${index + 1}`}
+						key={picture.alt}
 						className="size-full"
 					>
 						<figure className="h-[300px] w-full">
@@ -60,7 +60,7 @@ export const ProductSlider = ({
 			>
 				<IconChevronRight />
 			</button>
-			<ul className="landmarks -translate-x-[50%] absolute bottom-[5%] left-[50%] z-5 flex justify-between" />
+			<ul className="landmarks absolute bottom-[5%] left-[50%] z-5 flex -translate-x-[50%] justify-between" />
 		</div>
 	);
 };

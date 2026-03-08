@@ -12,9 +12,9 @@ export const ItemSubmenu = ({
 			ref={ref}
 			className={`bg-primary/5 ${isApartementListHidden ? "hidden" : ""}`}
 		>
-			{items?.map(({ href, textContent }, index) => (
+			{items?.map(({ href, textContent }) => (
 				<li
-					key={`${textContent}-${index + 1}`}
+					key={textContent}
 					className={`${itemContainerClassName} grid grid-cols-[10px_auto] items-center first:border-t`}
 				>
 					<span className="ml-2 h-[60%] w-0.5 rounded bg-primary/30" />
