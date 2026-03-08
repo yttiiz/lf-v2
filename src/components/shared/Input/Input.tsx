@@ -1,5 +1,5 @@
 import { cn, Input as InputHeroui } from "@heroui/react";
-import type { InputPropsType } from "@types";
+import type { IconStyleType, InputPropsType } from "@types";
 import { Icon } from "../Icons/mod";
 
 export const Input = ({
@@ -31,13 +31,17 @@ export const Input = ({
 			max={max}
 			startContent={
 				typeof startContent === "string" ? (
-					<Icon icon={startContent} />
+					<Icon icon={startContent as IconStyleType} />
 				) : (
 					startContent
 				)
 			}
 			endContent={
-				typeof endContent === "string" ? <Icon icon={endContent} /> : endContent
+				typeof endContent === "string" ? (
+					<Icon icon={endContent as IconStyleType} />
+				) : (
+					endContent
+				)
 			}
 			placeholder={placeholder}
 			variant={variant}
