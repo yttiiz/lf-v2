@@ -36,7 +36,7 @@
 		"tailwindcss": "^4.1.11"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.2",
+		"@biomejs/biome": "^2.4.6",
 		"husky": "^9.1.7",
 		"netlify-cli": "^23.9.1",
 		"react-easy-crop": "^5.5.3",
