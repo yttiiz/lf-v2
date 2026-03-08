@@ -21,8 +21,10 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# IDE setting folder
 .idea/
+.vscode/
+.zed/
 
 # deno lock
 deno.lock
