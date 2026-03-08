@@ -1433,7 +1433,7 @@ packages:
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
   '@jsr/yttiiz__utils@0.2.22':
-    resolution: {integrity: sha512-6QR3z2ii0xOhAURycw9csoS2iEhiyAr9Xvy0wWhMU5OmvzE/Oib0lRmW/jEkeaKHxp1iRQXnJu7xbF30p0Y+wQ==}
+    resolution: {integrity: sha512-6QR3z2ii0xOhAURycw9csoS2iEhiyAr9Xvy0wWhMU5OmvzE/Oib0lRmW/jEkeaKHxp1iRQXnJu7xbF30p0Y+wQ==, tarball: https://npm.jsr.io/~/11/@jsr/yttiiz__utils/0.2.22.tgz}
 
   '@levischuck/tiny-cbor@0.2.11':
     resolution: {integrity: sha512-llBRm4dT4Z89aRsm6u2oEZ8tfwL/2l6BwpZ7JcyieouniDECM5AqNgr/y08zalEIvW3RSK4upYyybDcmjXqAow==}

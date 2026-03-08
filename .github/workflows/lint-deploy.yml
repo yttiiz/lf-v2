@@ -43,8 +43,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'pnpm'
-      - name: Configure JSR registry
-        run: echo "@jsr:registry=https://npm.jsr.io" >> .npmrc
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build project
