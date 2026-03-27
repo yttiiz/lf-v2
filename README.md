@@ -74,7 +74,11 @@ MAILER_FORGOT_PASSWORD_URL="your_mailer_service_url"
 - `BETTER_AUTH_URL`: Base URL for auth callbacks (should match your app URL)
 
 ### 3. Start Development Server
-
+Launch the database
+```bash
+pnpm db
+```
+Then run
 ```bash
 pnpm dev
 ```

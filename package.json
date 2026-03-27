@@ -5,6 +5,7 @@
 	"packageManager": "pnpm@10.31.0",
 	"scripts": {
 		"dev": "astro dev",
+		"db": "sudo systemctl start mongod.service",
 		"build": "astro build",
 		"check": "biome check --max-diagnostics=none src",
 		"format": "biome check --write src",
