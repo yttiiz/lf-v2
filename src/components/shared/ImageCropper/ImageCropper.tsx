@@ -1,5 +1,7 @@
-import { useState } from "react";
-import Cropper, { type Area } from "react-easy-crop";
+import { lazy, Suspense, useState } from "react";
+import type { Area } from "react-easy-crop";
+
+const Cropper = lazy(() => import("react-easy-crop"));
 
 export const ImageCropper = ({
 	image,
@@ -18,25 +20,27 @@ export const ImageCropper = ({
 	};
 
 	return isImageOk ? (
-		<div className="flex h-[70dvh] w-full sm:h-[500px]">
-			<Cropper
-				image={image}
-				crop={crop}
-				aspect={1 / 1}
-				zoom={zoom}
-				onCropChange={setCrop}
-				onZoomChange={setZoom}
-				onCropComplete={onCropComplete}
-				style={{
-					containerStyle: {
-						width: "100%",
-						height: "100%",
-						position: "relative",
-						borderRadius: "8px",
-					},
-				}}
-			/>
-		</div>
+		<Suspense fallback={<p>Chargement...</p>}>
+			<div className="flex h-[70dvh] w-full sm:h-[500px]">
+				<Cropper
+					image={image}
+					crop={crop}
+					aspect={1 / 1}
+					zoom={zoom}
+					onCropChange={setCrop}
+					onZoomChange={setZoom}
+					onCropComplete={onCropComplete}
+					style={{
+						containerStyle: {
+							width: "100%",
+							height: "100%",
+							position: "relative",
+							borderRadius: "8px",
+						},
+					}}
+				/>
+			</div>
+		</Suspense>
 	) : (
 		<p>Aucune image à afficher !</p>
 	);
