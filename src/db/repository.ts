@@ -16,8 +16,15 @@ import {
 } from "mongodb";
 
 export class Mongo {
-	public static client = Mongo.initClient();
+	private static _client: MongoClient | undefined;
 	private static database: Db | undefined;
+
+	public static get client(): MongoClient {
+		if (!Mongo._client) {
+			Mongo._client = Mongo.initClient();
+		}
+		return Mongo._client;
+	}
 
 	private static initClient() {
 		let url = "mongodb://localhost:27017/flamboyants";
