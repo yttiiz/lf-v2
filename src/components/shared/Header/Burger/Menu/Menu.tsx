@@ -1,3 +1,4 @@
+import { cn } from "@heroui/react";
 import { isUserConnected, useStore } from "@store";
 import type { ItemType } from "@types";
 import { useRef, useState } from "react";
@@ -53,9 +54,11 @@ export const Menu = ({ items }: { items?: ItemType[] }) => {
 										</span>
 										{textContent}
 										<span
-											className={`aspect-[1.25/1] w-1.5 bg-primary origin-center${
-												isApartementListHidden ? "" : "rotate-180"
-											}`}
+											className={cn(
+												"aspect-[1.25/1] w-1.5 origin-center bg-primary",
+												"transition-rotate duration-300",
+												isApartementListHidden ? "" : "rotate-180",
+											)}
 											style={{ clipPath: "polygon(0 0, 100% 0, 50% 100%)" }}
 										/>
 									</div>

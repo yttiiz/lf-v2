@@ -51,7 +51,9 @@ export const Burger = ({
 					</button>
 				}
 				children={<Menu items={menuItems} />}
-				classNames={{ content: "p-0 bg-white rounded-lg shadow" }}
+				classNames={{
+					content: "p-0 bg-white overflow-hidden rounded-lg shadow",
+				}}
 			/>
 		</div>
 	);

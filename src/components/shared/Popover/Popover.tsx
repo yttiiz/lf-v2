@@ -33,7 +33,7 @@ export const Popover = ({
 			classNames={classNames}
 			onOpenChange={onOpenChange}
 			offset={25}
-			showArrow
+			showArrow={!(globalThis.innerWidth <= 1080)}
 		>
 			<PopoverTrigger>{trigger}</PopoverTrigger>
 			<PopoverContent>{children}</PopoverContent>
