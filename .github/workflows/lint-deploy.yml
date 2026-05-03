@@ -44,6 +44,8 @@ jobs:
           node-version: 24
           cache: 'pnpm'
 
+      - name: Clean pnpm store
+        run: pnpm store prune
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build project
